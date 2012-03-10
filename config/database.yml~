@@ -1,9 +1,8 @@
 # SQLite version 3.x
 #   gem install sqlite3
 development:
-  adapter: postgres
-  database: rails_development
-  username: panagiotis
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
@@ -17,9 +16,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgres
-  database: dfivlhsyst
+  adapter: sqlite3
+  database: db/production.sqlite3
   pool: 5
-  username: dfivlhsyst
-  password: 4c6KGR34WYMOLEEQzGB6
   timeout: 5000
