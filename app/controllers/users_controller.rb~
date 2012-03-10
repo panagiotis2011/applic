@@ -24,7 +24,7 @@ end
 
     # @users = User.all
     @users = User.page(params[:page])
-    tag_cloud
+    #tag_cloud
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

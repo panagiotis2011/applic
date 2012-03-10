@@ -54,27 +54,3 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
- .tag {
-    background-color: #eee;
-    border: 2px solid #ccc;
-    color: orange;
-    border-radius: 7px;
-    -moz-border-radius: 7px;
-    padding: 2px 15px;
-    text-decoration: none;
-  }
-  .current_tag {
-    background-color: #ddd;
-    color: orange;
-    border: 2px solid orange;
-    border-radius: 7px;
-    -moz-border-radius: 7px;
-    font-weight: bold;
-  }
-  .tag:hover, .current_tag:hover {
-    background-color: #bbb;
-    color: red;
-    border: 2px solid red;
-    border-radius: 7px;
-    -moz-border-radius: 7px;
-  }
