@@ -3,13 +3,11 @@ class UsersController < ApplicationController
 
 #def tag
   #@users = User.tagged_with(params[:id]).page(params[:page])
- # @tags = User.tag_counts_on(:tags)
+  #@tags = User.tag_counts_on(:tags)
   #render :template => 'users/index'
 #end
 
-def tag_cloud
-  @tags ||= User.tag_counts_on(:tags)
-end
+
 
 
   # GET /users
@@ -22,9 +20,9 @@ end
    #klass = klass.tagged_with(@tag) if (@tag = params[:tag]).present?
    #@users = klass.paginate( options )
 
-    # @users = User.all
-    @users = User.page(params[:page])
-    tag_cloud
+    @users = User.all
+    #@users = User.page(params[:page])
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

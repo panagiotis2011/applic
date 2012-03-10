@@ -21,8 +21,8 @@
   </div>
 
 <div class="field">
-    <%= f.label :Tag_names %><br />
-    <%= f.text_field :tag_names %>
+    <%= f.label :Tag_list %><br />
+    <%= f.text_field :tag_list %>
   </div>
 
 

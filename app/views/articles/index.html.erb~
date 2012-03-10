@@ -1,0 +1,37 @@
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tags.sort_by(&:count).reverse.each do |k| %>
+      <% url_opts = {:action => "index", :controller => "articles"}
+         link_name = "#{k.name} (#{k.count})"
+      %>
+      <% if @tag == k.name %>
+        <%= link_to link_name, url_opts.merge(:tag => nil), :class => "tag current_tag", :title => "Click again to see all" %>
+      <% else %>
+        <%= link_to link_name,  url_opts.merge(:tag => k.name), :class => "tag", :title => "Click to filter by #{k.name}" %>
+      <% end %>
+    <% end %>
+
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.user_id %></td>
+    <td><%= link_to 'Show', article %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>

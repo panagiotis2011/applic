@@ -1,4 +1,6 @@
 Applic::Application.routes.draw do
+  resources :articles
+
   resources :users
   match '/users/index' => 'users#tag'
 

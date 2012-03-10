@@ -9,9 +9,16 @@
     <th></th>
   </tr>
 
-<%-tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
-    link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
-<% end %>
+ <% @tags.sort_by(&:count).reverse.each do |k| %>
+      <% url_opts = {:action => "index", :controller => "users"}
+         link_name = "#{k.name} (#{k.count})"
+      %>
+      <% if @tag == k.name %>
+        <%= link_to link_name, url_opts.merge(:tag => nil), :class => "tag current_tag", :title => "Click again to see all" %>
+      <% else %>
+        <%= link_to link_name,  url_opts.merge(:tag => k.name), :class => "tag", :title => "Click to filter by #{k.name}" %>
+      <% end %>
+    <% end %>
 
 <% @users.each do |user| %>
   <tr>
