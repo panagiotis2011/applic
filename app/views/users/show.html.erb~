@@ -2,7 +2,7 @@
 
 <p>
   <b>Name:</b>
-  <%= gravatar_for @user %>
+  <%= gravatar_image_tag @user.email %>
   <%= @user.name %>
 </p>
 
